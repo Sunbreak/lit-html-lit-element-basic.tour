@@ -4,12 +4,11 @@
     <todo-app></todo-app>
 
     <script type="module">
-      import { LitElement } from 'https://unpkg.com/lit-element?module';
+      import { LitElement, html } from 'https://unpkg.com/lit-element?module';
 
       class TodoApp extends LitElement {
-        connectedCallback() {
-          super.connectedCallback();
-          console.log('lit element connected');
+        render() {
+          return html` <h1>Todo app</h1> `;
         }
       }
 
