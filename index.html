@@ -22,9 +22,21 @@
           ];
         }
 
+        _addTodo() {
+          const input = this.shadowRoot.getElementById('addTodoInput');
+          const text = input.value;
+          input.value = '';
+
+          this.todos.push({ text, finished: false });
+          this.requestUpdate();
+        }
+
         render() {
           return html`
             <h1>Todo app</h1>
+
+            <input id="addTodoInput" placeholder="Name" />
+            <button @click="${this._addTodo}">Add</button>
 
             <ol>
               ${this.todos.map(
