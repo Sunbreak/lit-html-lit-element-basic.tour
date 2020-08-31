@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html>
   <body>
-    My todo app
+    <todo-app></todo-app>
+
+    <script type="module">
+      import { LitElement } from 'https://unpkg.com/lit-element?module';
+
+      class TodoApp extends LitElement {
+        connectedCallback() {
+          super.connectedCallback();
+          console.log('lit element connected');
+        }
+      }
+
+      customElements.define('todo-app', TodoApp);
+    </script>
   </body>
 </html>
