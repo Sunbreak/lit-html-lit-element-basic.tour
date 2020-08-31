@@ -6,9 +6,19 @@
     <script type="module">
       import { LitElement, html } from 'https://unpkg.com/lit-element?module';
 
+      const author = 'open-wc';
+      const homepage = 'https://open-wc.org/';
+      const footerTemplate = html`
+        <footer>Made with love by <a href="${homepage}">${author}</a></footer>
+      `;
+
       class TodoApp extends LitElement {
         render() {
-          return html` <h1>Todo app</h1> `;
+          return html`
+            <h1>Todo app</h1>
+
+            ${footerTemplate}
+          `;
         }
       }
 
